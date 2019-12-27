@@ -113,14 +113,18 @@ class _LunchState extends State<LunchPage> {
           // if not empty, check validation
           else { 
             String err = LunchPageValidator.validateLunchDate(_lunchDatePickerController.text);
-            if(err == null)
+            if(err == null) {
               _lunhcDate = DateTime.parse(_lunchDatePickerController.text);
+            }
+            // if not valid, display error message
             else {
               _lunhcDate = null;
               WarningDialog.getInstance().showWarningDialog(context, err);
             }
           }
           
+          // if no error, save lunch date to shared preference
+          // then go to next page
           if(_lunhcDate != null) {
             setLunchDate(DateFormat(dateTimeFormat).format(_lunhcDate));
             Navigator.pushNamed(context, ingredientPage);
