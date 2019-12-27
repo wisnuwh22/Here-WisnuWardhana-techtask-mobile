@@ -7,26 +7,22 @@ import 'package:tech_task/settings/messages.dart';
 
 void main(){
   
-  Widget mockApp({Widget child, NavigatorObserver observer}) {
+  Widget mockApp({Widget child}) {
     return MaterialApp(
         home: child
       );
   }
 
   LunchPage lunchPage;
-  NavigatorObserver observer;
 
   setUp(() {
     lunchPage = LunchPage();
   });
 
-  setUpAll((){
-    
-  });
 
   testWidgets('finding widgets in lunch page', (WidgetTester tester) async {
    
-    await tester.pumpWidget(mockApp(child: lunchPage, observer: observer));
+    await tester.pumpWidget(mockApp(child: lunchPage));
 
     expect(find.byType(TextField), findsOneWidget);
     expect(find.byType(InkResponse), findsOneWidget);
@@ -36,7 +32,7 @@ void main(){
 
   testWidgets("showing date picker dialog and choose date 15 on current monnth", (WidgetTester tester) async {
 
-    await tester.pumpWidget(mockApp(child: lunchPage, observer: observer));
+    await tester.pumpWidget(mockApp(child: lunchPage));
 
     await tester.tap(find.byIcon(Icons.date_range));
     await tester.pump();
@@ -51,7 +47,7 @@ void main(){
 
   testWidgets("entry invalid date and showing warning dialog", (WidgetTester tester) async {
 
-    await tester.pumpWidget(mockApp(child: lunchPage, observer: observer));
+    await tester.pumpWidget(mockApp(child: lunchPage));
 
     await tester.enterText(find.byType(TextField), "1234");
     await tester.tap(find.byType(RaisedButton));
