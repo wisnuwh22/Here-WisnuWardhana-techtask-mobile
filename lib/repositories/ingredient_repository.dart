@@ -10,14 +10,14 @@ import 'package:tech_task/models/ingredient_model.dart';
 // whether its from sources or caches
 class IngredientRepository {
 
-  // List of different data sources
+  // List of Ingredient data sources
   // Currently only from API and local Database
   List<IngredientSource> sources = <IngredientSource>[
     IngredientApiSource(),
     ingredientDbSource,
   ];
 
-  // List of different data caches
+  // List of Ingredient data caches
   // Currently in local database
   List<IngredientCache> caches = <IngredientCache>[
     ingredientDbSource,
@@ -32,7 +32,7 @@ class IngredientRepository {
 
     // looping through all data sources
     // if data not null, break the looping
-    // if data null, continue loop to next data source
+    // if data null, continue looping to fetch next data source
     for(source in sources) {
       ingredients = await source.fetchIngredients();
       if(ingredients != null && ingredients.length > 0) {
@@ -41,7 +41,7 @@ class IngredientRepository {
     }
 
     // looping through all data caches
-    // if data caches is not same with data source,
+    // if data caches is not same with latest data source,
     // add ingredient to data caches
     for(var cache in caches) {
       if(cache != source) {
