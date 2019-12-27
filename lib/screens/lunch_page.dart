@@ -89,7 +89,7 @@ class _LunchState extends State<LunchPage> {
         firstDate: DateTime(2019, 1, 1),
         initialDate: selectedDate,
         lastDate: DateTime(2020, 12, 31));
-    if (pickedDate != null && pickedDate != selectedDate)
+    if (pickedDate != null)
       setState(() {
         selectedDate = pickedDate;
         _datePickerController.text = DateFormat(dateTimeFormat).format(selectedDate);
@@ -101,7 +101,7 @@ class _LunchState extends State<LunchPage> {
   Widget _buildSubmitButton(BuildContext context) {
     final submitButton = Container(
       margin: EdgeInsets.all(20),
-      height: MediaQuery.of(context).size.height * 0.09,
+      height: MediaQuery.of(context).size.height * 0.07,
       child: RaisedButton(
         onPressed: (){
           DateTime _lunhcDate ;
