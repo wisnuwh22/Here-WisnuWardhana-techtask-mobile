@@ -30,7 +30,7 @@ class _IngredientState extends State<IngredientPage> {
       appBar: AppBar(
         title: Text('Lunch Ingredients'),
       ),
-      body: _buildPage(),
+      body: _buildList(),
       floatingActionButton: _buildFloatingButton(),
     );
 
@@ -50,25 +50,6 @@ class _IngredientState extends State<IngredientPage> {
       },
       child: Icon(Icons.next_week),
     );
-  }
-
-  // widget to build the entire page
-  Widget _buildPage() {
-    
-    final children = <Widget>[];
-   
-    final listIngredient = _buildList();
-    final container = Container(
-      height: MediaQuery.of(context).size.height - 76,
-      child: listIngredient
-    );
-    children.add(container);
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: children,
-    );
-
   }
 
   // widget to build list ingredients
@@ -94,7 +75,7 @@ class _IngredientState extends State<IngredientPage> {
                 return CheckboxListTile(
                   title: Text('${_ingredient.title}'),
                   subtitle: Text('use-by : ${_ingredient.useBy}', 
-                    style: TextStyle(color: !_ingredient.isPassedUseBy? primaryColor : secondaryColor)),
+                    style: TextStyle(color: !_ingredient.isPastUseBy? primaryColor : secondaryColor)),
                   value: _ingredient.isChecked,
                   onChanged: (bool value) => 
                     ingredientProvider.toggleIngredient(_ingredient)

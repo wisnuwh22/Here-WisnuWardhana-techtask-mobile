@@ -26,24 +26,7 @@ class _RecipeState extends State<RecipePage> {
       appBar: AppBar(
         title: Text('Lunch Receipes'),
       ),
-      body: _buildPage(context),
-    );
-  }
-
-  Widget _buildPage(BuildContext context) {
-
-    final children = <Widget>[];
-
-    final listRecipe = _buildRecipeList();
-    final container = Container(
-      height: MediaQuery.of(context).size.height,
-      child: listRecipe,
-    );
-    children.add(container);
-    
-    return ListView(
-      padding: EdgeInsets.zero,
-      children: children,
+      body: _buildRecipeList(),
     );
   }
 
