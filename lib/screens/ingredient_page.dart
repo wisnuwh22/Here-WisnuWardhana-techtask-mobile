@@ -75,7 +75,7 @@ class _IngredientState extends State<IngredientPage> {
                 return CheckboxListTile(
                   title: Text('${_ingredient.title}'),
                   subtitle: Text('use-by : ${_ingredient.useBy}', 
-                    style: TextStyle(color: !_ingredient.isPassedUseBy? primaryColor : secondaryColor)),
+                    style: TextStyle(color: !_ingredient.isPastUseBy? primaryColor : secondaryColor)),
                   value: _ingredient.isChecked,
                   onChanged: (bool value) => 
                     ingredientProvider.toggleIngredient(_ingredient)

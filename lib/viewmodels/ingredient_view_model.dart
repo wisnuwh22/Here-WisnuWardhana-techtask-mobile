@@ -10,22 +10,22 @@ import 'package:tech_task/settings/constants.dart';
 class IngredientViewModel {
   String title;
   String useBy;
-  bool isPassedUseBy;
+  bool isPastUseBy;
   bool isChecked;
 
   IngredientViewModel(IngredientModel ingredientModel, DateTime lunchDate) {
     title = ingredientModel.title;
     useBy = DateFormat(dateTimeFormat).format(ingredientModel.useBy);
     int days = ingredientModel.useBy.compareTo(lunchDate);
-    isPassedUseBy = days.isNegative ? true : false;
+    isPastUseBy = days.isNegative ? true : false;
     isChecked = false;
   }
 
  
   // toggle isChecked value
-  // can not update isChecked if already passed use-by
+  // can not update isChecked if already past use-by
   toggled() {
-    if(!isPassedUseBy)
+    if(!isPastUseBy)
       isChecked = !isChecked;
   }
 
