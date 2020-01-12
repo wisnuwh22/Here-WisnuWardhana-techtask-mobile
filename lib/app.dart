@@ -23,15 +23,15 @@ class App extends StatelessWidget {
     );
   }
 
-  final List<SingleChildCloneableWidget> providers = [
-    ChangeNotifierProvider(create: (context) => IngredientProvider()),
-    ChangeNotifierProvider(create: (context) => RecipeProvider()),
+  final providers = [
+    ChangeNotifierProvider<IngredientProvider>(create: (_) => IngredientProvider()),
+    ChangeNotifierProvider<RecipeProvider>(create: (_) => RecipeProvider()),
   ];
 
   final Map<String, WidgetBuilder> routes = {
-    lunchPage : (context) => LunchPage(),
-    ingredientPage: (context) => IngredientPage(),
-    recipePage: (context) => RecipePage(),
+    lunchPage : (_) => LunchPage(),
+    ingredientPage: (_) => IngredientPage(),
+    recipePage: (_) => RecipePage(),
   };
   
 }
