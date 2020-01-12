@@ -14,7 +14,7 @@ class IngredientApiSource implements IngredientSource{
 
     try {
 
-      final response = await client.get(ingredientUrl);
+      final response = await client.get(INGREDIENT_URL);
       final ingredients = json.decode(response.body) as List;
 
       return ingredients.map((i) => IngredientModel.fromJson(i)).toList();

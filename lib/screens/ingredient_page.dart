@@ -44,7 +44,7 @@ class _IngredientState extends State<IngredientPage> {
       onPressed: (){
         String err = IngredientPageValidator.validateIngredient(ingredientProvider.listIngredient);
         if(err ==  null)
-          Navigator.pushNamed(context, recipePage);
+          Navigator.pushNamed(context, RECIPE_PAGE_ROUTE);
         else
           WarningDialog.getInstance().showWarningDialog(context, err);
       },
@@ -75,7 +75,7 @@ class _IngredientState extends State<IngredientPage> {
                 return CheckboxListTile(
                   title: Text('${_ingredient.title}'),
                   subtitle: Text('use-by : ${_ingredient.useBy}', 
-                    style: TextStyle(color: !_ingredient.isPastUseBy? primaryColor : secondaryColor)),
+                    style: TextStyle(color: !_ingredient.isPastUseBy? PRIMARY_COLOR : SECONDARY_COLOR)),
                   value: _ingredient.isChecked,
                   onChanged: (bool value) => 
                     ingredientProvider.toggleIngredient(_ingredient)

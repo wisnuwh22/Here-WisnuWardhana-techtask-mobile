@@ -12,7 +12,7 @@ void main() {
     test("invalid datetime return error string", (){
       String mockLunchDate = "1234";
       var result = LunchPageValidator.validateLunchDate(mockLunchDate);
-      expect(result, invalidLunchDateMessage);
+      expect(result, INVALID_DATE_MESSAGE);
     });
 
     test("valid datetime return null", (){
@@ -28,7 +28,7 @@ void main() {
     test("Empty ListIngredient return error string", () {
       List<IngredientViewModel> mockIngredients = [];
       var result = IngredientPageValidator.validateIngredient(mockIngredients);
-      expect(result, noIngredientSelectedMessage);
+      expect(result, NO_DATA_SELECTED_MESSAGE);
     });
     test("ListIngredient with no ingredient checked return error string", () {
       var ingredientModel = IngredientModel(title: "Ham", useBy: DateTime.parse("2020-12-31"));
@@ -37,7 +37,7 @@ void main() {
       mockIngredients.add(ingredientViewModel);
 
       var result = IngredientPageValidator.validateIngredient(mockIngredients);
-      expect(result, noIngredientSelectedMessage);
+      expect(result, NO_DATA_SELECTED_MESSAGE);
     });
 
     test("ListIngredient with ingredient checked return null", () {

@@ -17,7 +17,7 @@ class App extends StatelessWidget {
       providers: providers,
       child: MaterialApp(
         title: 'Loadsmile Lunch App',
-        theme: ThemeData(primarySwatch: primaryColor),
+        theme: ThemeData(primarySwatch: PRIMARY_COLOR),
         routes: routes,
       ),
     );
@@ -29,9 +29,9 @@ class App extends StatelessWidget {
   ];
 
   final Map<String, WidgetBuilder> routes = {
-    lunchPage : (_) => LunchPage(),
-    ingredientPage: (_) => IngredientPage(),
-    recipePage: (_) => RecipePage(),
+    LUNCH_PAGE_ROUTE : (_) => LunchPage(),
+    INGREDIENT_PAGE_ROUTE: (_) => IngredientPage(),
+    RECIPE_PAGE_ROUTE: (_) => RecipePage(),
   };
   
 }

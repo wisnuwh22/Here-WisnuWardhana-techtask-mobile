@@ -15,7 +15,7 @@ class IngredientViewModel {
 
   IngredientViewModel(IngredientModel ingredientModel, DateTime lunchDate) {
     title = ingredientModel.title;
-    useBy = DateFormat(dateTimeFormat).format(ingredientModel.useBy);
+    useBy = DateFormat(DATE_TIME_FORMAT).format(ingredientModel.useBy);
     int days = ingredientModel.useBy.compareTo(lunchDate);
     isPastUseBy = days.isNegative ? true : false;
     isChecked = false;

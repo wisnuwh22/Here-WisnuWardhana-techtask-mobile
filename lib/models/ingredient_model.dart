@@ -18,7 +18,7 @@ class IngredientModel {
   Map<String, dynamic> toMap() {
     return <String, dynamic> {
       "title": title,
-      "useBy": DateFormat(dateTimeFormat).format(useBy),
+      "useBy": DateFormat(DATE_TIME_FORMAT).format(useBy),
     };
   }
 }

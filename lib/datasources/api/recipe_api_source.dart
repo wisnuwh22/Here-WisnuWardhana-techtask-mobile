@@ -14,7 +14,7 @@ class RecipeApiSource implements RecipeSource{
 
     try {
     
-      final response = await client.get('$recipeUrl?ingredients=Ham,Cheese');
+      final response = await client.get('$RECIPE_URL?ingredients=Ham,Cheese');
       final recipes = json.decode(response.body) as List;
     
       return recipes.map((i) => RecipeModel.fromJson(i)).toList();

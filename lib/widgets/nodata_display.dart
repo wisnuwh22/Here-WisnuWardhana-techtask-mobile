@@ -3,6 +3,6 @@ import 'package:tech_task/settings/messages.dart';
 
 Widget nodataDisplay() {
   return Center(
-    child: Text(noDataMessage),
+    child: Text(NO_DATA_MESSAGE),
   );
 }

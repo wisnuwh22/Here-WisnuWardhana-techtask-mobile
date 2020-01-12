@@ -80,7 +80,7 @@ class _RecipeState extends State<RecipePage> {
     return Wrap(
       children: ingredients.map((ing) => 
           Chip(label: Text(ing), 
-               backgroundColor: _listStringIngredient.contains(ing)? primaryColor : secondaryColor))
+               backgroundColor: _listStringIngredient.contains(ing)? PRIMARY_COLOR : SECONDARY_COLOR))
           .toList(),
     );
   }

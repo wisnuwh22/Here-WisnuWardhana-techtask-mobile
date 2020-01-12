@@ -15,7 +15,7 @@ class LunchPage extends StatefulWidget {
 
 class _LunchState extends State<LunchPage> {
 
-  TextEditingController _lunchDatePickerController = new MaskedTextController(mask: dateTimeMask);
+  TextEditingController _lunchDatePickerController = new MaskedTextController(mask: DATE_TIME_MASK);
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +92,7 @@ class _LunchState extends State<LunchPage> {
     if (pickedDate != null)
       setState(() {
         selectedDate = pickedDate;
-        _datePickerController.text = DateFormat(dateTimeFormat).format(selectedDate);
+        _datePickerController.text = DateFormat(DATE_TIME_FORMAT).format(selectedDate);
       },
     );
   }
@@ -126,8 +126,8 @@ class _LunchState extends State<LunchPage> {
           // if no error, save lunch date to shared preference
           // then go to next page
           if(_lunhcDate != null) {
-            setLunchDate(DateFormat(dateTimeFormat).format(_lunhcDate));
-            Navigator.pushNamed(context, ingredientPage);
+            setLunchDate(DateFormat(DATE_TIME_FORMAT).format(_lunhcDate));
+            Navigator.pushNamed(context, INGREDIENT_PAGE_ROUTE);
           }
           
         },

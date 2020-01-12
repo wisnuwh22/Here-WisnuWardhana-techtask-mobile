@@ -7,6 +7,6 @@ class LunchPageValidator {
   // if not valid, return error message
   static String validateLunchDate(String val) {
     DateTime lunchDate = DateTime.tryParse(val);
-    return lunchDate == null ? invalidLunchDateMessage : null;
+    return lunchDate == null ? INVALID_DATE_MESSAGE : null;
   }
 }

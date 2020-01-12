@@ -8,6 +8,6 @@ class IngredientPageValidator {
   // if not found, return error message
   static String validateIngredient(List<IngredientViewModel> val) {
     int checked = val.where((ing) => ing.isChecked).toList().length;
-    return checked > 0 ? null : noIngredientSelectedMessage;
+    return checked > 0 ? null : NO_DATA_SELECTED_MESSAGE;
   }
 }
