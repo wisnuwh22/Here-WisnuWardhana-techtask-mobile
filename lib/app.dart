@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tech_task/providers/ingredient_provider.dart';
-import 'package:tech_task/providers/recipe_provider.dart';
-import 'package:tech_task/screens/ingredient_page.dart';
-import 'package:tech_task/screens/lunch_page.dart';
-import 'package:tech_task/screens/recipe_page.dart';
-import 'package:tech_task/settings/colors.dart';
-import 'package:tech_task/settings/constants.dart';
-
+import 'package:tech_task/application/providers/ingredient_provider.dart';
+import 'package:tech_task/application/providers/recipe_provider.dart';
+import 'package:tech_task/domain/settings/colors.dart';
+import 'package:tech_task/domain/settings/constants.dart';
+import 'package:tech_task/presentation/screens/ingredient_page.dart';
+import 'package:tech_task/presentation/screens/lunch_page.dart';
+import 'package:tech_task/presentation/screens/recipe_page.dart';
 
 class App extends StatelessWidget {
   @override
