@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tech_task/providers/ingredient_provider.dart';
-import 'package:tech_task/providers/recipe_provider.dart';
-import 'package:tech_task/screens/ingredient_page.dart';
-import 'package:tech_task/screens/lunch_page.dart';
-import 'package:tech_task/screens/recipe_page.dart';
-import 'package:tech_task/settings/colors.dart';
-import 'package:tech_task/settings/constants.dart';
-
+import 'package:tech_task/application/providers/ingredient_provider.dart';
+import 'package:tech_task/application/providers/recipe_provider.dart';
+import 'package:tech_task/domain/settings/colors.dart';
+import 'package:tech_task/domain/settings/constants.dart';
+import 'package:tech_task/presentation/screens/ingredient_page.dart';
+import 'package:tech_task/presentation/screens/lunch_page.dart';
+import 'package:tech_task/presentation/screens/recipe_page.dart';
 
 class App extends StatelessWidget {
   @override
@@ -17,21 +16,21 @@ class App extends StatelessWidget {
       providers: providers,
       child: MaterialApp(
         title: 'Loadsmile Lunch App',
-        theme: ThemeData(primarySwatch: primaryColor),
+        theme: ThemeData(primarySwatch: PRIMARY_COLOR),
         routes: routes,
       ),
     );
   }
 
-  final List<SingleChildCloneableWidget> providers = [
-    ChangeNotifierProvider(create: (context) => IngredientProvider()),
-    ChangeNotifierProvider(create: (context) => RecipeProvider()),
+  final providers = [
+    ChangeNotifierProvider<IngredientProvider>(create: (_) => IngredientProvider()),
+    ChangeNotifierProvider<RecipeProvider>(create: (_) => RecipeProvider()),
   ];
 
   final Map<String, WidgetBuilder> routes = {
-    lunchPage : (context) => LunchPage(),
-    ingredientPage: (context) => IngredientPage(),
-    recipePage: (context) => RecipePage(),
+    LUNCH_PAGE_ROUTE : (_) => LunchPage(),
+    INGREDIENT_PAGE_ROUTE: (_) => IngredientPage(),
+    RECIPE_PAGE_ROUTE: (_) => RecipePage(),
   };
   
 }
