@@ -13,7 +13,7 @@ class IngredientModel {
 
   IngredientModel.fromDb(Map<String, dynamic> parsedJson) 
     : title = parsedJson["title"],
-      useBy = DateTime.parse(parsedJson["use-by"]);
+      useBy = DateTime.parse(parsedJson["useBy"]);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic> {
