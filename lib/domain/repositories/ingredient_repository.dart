@@ -15,13 +15,13 @@ class IngredientRepository {
   // Currently only from API and local Database
   List<IngredientSource> sources = <IngredientSource>[
     IngredientApiSource(),
-    ingredientDbSource,
+    IngredientDbSource(),
   ];
 
   // List of Ingredient data caches
   // Currently in local database
   List<IngredientCache> caches = <IngredientCache>[
-    ingredientDbSource,
+    IngredientDbSource(),
   ];
 
   // fetching ingredients from all data sources
