@@ -18,6 +18,7 @@ class RecipeDbSource implements RecipeSource, RecipeCache {
     return _recipeDbSource;
   }
 
+  // fetching Recipe from Recipe table in lunch db
   @override
   Future<List<RecipeModel>> fetchRecipes() async {
     List <RecipeModel> recipes = List<RecipeModel>();
@@ -35,6 +36,8 @@ class RecipeDbSource implements RecipeSource, RecipeCache {
     return recipes;
   }
   
+  // cache data to lunch db
+  // by adding all Recipe to Recipe table in lunch db
   @override
   addRecipes(List<RecipeModel> recipes) {
     clear();
@@ -45,6 +48,7 @@ class RecipeDbSource implements RecipeSource, RecipeCache {
     });
   }
 
+  // clear Recipe Table
   @override
   clear() {
     _lunchDb.deleteRecipe();

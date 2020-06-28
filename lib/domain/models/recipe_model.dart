@@ -9,6 +9,7 @@ class RecipeModel {
   
 }
 
+// Recipe Model for database purpose
 class RecipeDbModel {
   final String title;
   final String ingredient;

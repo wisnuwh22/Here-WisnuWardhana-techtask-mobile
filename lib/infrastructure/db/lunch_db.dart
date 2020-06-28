@@ -46,7 +46,7 @@ class LunchDb {
   }
 
 
-  // Methods for Ingredient Table
+  // ======= Methods for Ingredient Table ==============
 
   Future<int> insertIngredient(IngredientModel ingredient) async {
     Database db = await lunchDatabase;
@@ -66,7 +66,7 @@ class LunchDb {
     return count;
   }
 
-  // Methods for Recipe Table
+  // ======= Methods for Ingredient Table ==============
 
   Future<int> insertRecipe(RecipeDbModel recipe) async {
     Database db = await lunchDatabase;
