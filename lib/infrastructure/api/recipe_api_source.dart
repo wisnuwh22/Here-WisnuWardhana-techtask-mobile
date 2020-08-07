@@ -4,11 +4,13 @@ import 'package:tech_task/domain/abstracts/recipe_source.dart';
 import 'package:tech_task/domain/models/recipe_model.dart';
 import 'package:tech_task/domain/settings/constants.dart';
 
-// Recipe API Sourse is the primary data source for Recipe
+// Recipe API Source is the primary data source for Recipe
 class RecipeApiSource implements RecipeSource{
 
   Client client = Client();
-  // fetching Recipe data from API
+  
+  // fetching Recipe from API
+  // If failed, return empty list of RecipeModel
   @override
   Future<List<RecipeModel>> fetchRecipes() async {
 
@@ -20,7 +22,7 @@ class RecipeApiSource implements RecipeSource{
       return recipes.map((i) => RecipeModel.fromJson(i)).toList();
     }
     catch (Exceptiom) {
-      return null;
+      return List<RecipeModel>();
     }
   }
 }

@@ -31,9 +31,7 @@ void main(){
   
   Widget mockApp({Widget child, NavigatorObserver observer}) {
     return 
-    // MaterialApp(
-    //   home: child
-    // );
+  
     MultiProvider(
       providers: providers,
       child: MaterialApp(

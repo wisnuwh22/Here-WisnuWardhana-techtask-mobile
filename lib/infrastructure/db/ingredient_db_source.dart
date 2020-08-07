@@ -23,6 +23,7 @@ class IngredientDbSource implements IngredientSource, IngredientCache {
   }
 
   // fetching Ingredient from Ingredient table in lunch db
+  // if failed, return empty list of IngredientModel
   @override
   Future<List<IngredientModel>> fetchIngredients() async{
 

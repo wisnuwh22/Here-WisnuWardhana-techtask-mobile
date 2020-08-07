@@ -8,7 +8,9 @@ import 'package:tech_task/domain/settings/constants.dart';
 class IngredientApiSource implements IngredientSource{
   
   Client client = Client();
-  // fetching Ingredient data from API
+  
+  // fetching Ingredient from API
+  // If failed, return empty list
   @override
   Future<List<IngredientModel>> fetchIngredients() async {
 

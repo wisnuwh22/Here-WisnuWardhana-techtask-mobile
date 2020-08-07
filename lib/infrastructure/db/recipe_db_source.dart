@@ -19,6 +19,7 @@ class RecipeDbSource implements RecipeSource, RecipeCache {
   }
 
   // fetching Recipe from Recipe table in lunch db
+  // if failed, return empty list of RecipeModel
   @override
   Future<List<RecipeModel>> fetchRecipes() async {
     List <RecipeModel> recipes = List<RecipeModel>();

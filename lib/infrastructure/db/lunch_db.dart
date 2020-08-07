@@ -66,7 +66,7 @@ class LunchDb {
     return count;
   }
 
-  // ======= Methods for Ingredient Table ==============
+  // ======= Methods for Recipe Table ==============
 
   Future<int> insertRecipe(RecipeDbModel recipe) async {
     Database db = await lunchDatabase;
